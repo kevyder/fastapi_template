@@ -1,20 +1,22 @@
-FROM python:3.13-slim
+FROM python:3.14-slim
+
+ENV POETRY_VERSION=2.2.1
 
 # Set work directory
 WORKDIR /app
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends gcc && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends build-essential && rm -rf /var/lib/apt/lists/*
 
 # Copy poetry files
 COPY pyproject.toml poetry.lock ./
 
 # Install Poetry
-RUN pip install --no-cache-dir poetry
+RUN pip install --upgrade pip && pip install --no-cache-dir poetry==$POETRY_VERSION
 
 # Install dependencies
 RUN poetry config virtualenvs.create false \
-    && poetry install --no-interaction --no-ansi --no-root
+    && poetry install --no-cache --no-interaction --no-ansi --without dev
 
 # Copy project files
 COPY src/ ./src/
