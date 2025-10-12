@@ -1,6 +1,8 @@
 
 # FastAPI Template
 
+[![CI](https://github.com/kevyder/fastapi_template/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/kevyder/fastapi_template/actions/workflows/ci.yml)
+
 This project is a template for building FastAPI applications with best practices for development, testing, and deployment using Docker and Poetry.
 
 ## Features
