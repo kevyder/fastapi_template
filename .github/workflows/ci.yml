@@ -40,7 +40,7 @@ jobs:
       if: steps.cached-dependencies.outputs.cache-hit != 'true'
       run: |
         source .venv/bin/activate
-        uv pip install -e .[test]
+        uv sync --group test
 
     - name: Run tests
       run: |
@@ -57,7 +57,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: "3.14"
+        python-version: "3.13.9"
 
     - name: Install uv
       run: pip install uv
@@ -68,7 +68,7 @@ jobs:
     - name: Install dependencies
       run: |
         source .venv/bin/activate
-        uv pip install -e .[dev]
+        uv sync --group dev
 
     - name: Run pre-commit
       uses: pre-commit/action@v3.0.0
