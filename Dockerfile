@@ -1,22 +1,20 @@
-FROM python:3.14-slim
+FROM python:3.13.9-slim
 
-ENV POETRY_VERSION=2.2.1
+ENV UV_VERSION=0.9.3
+ENV UV_PROJECT_ENVIRONMENT="/usr/local/"
 
 # Set work directory
 WORKDIR /app
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends build-essential && rm -rf /var/lib/apt/lists/*
-
 # Copy poetry files
-COPY pyproject.toml poetry.lock ./
+COPY pyproject.toml uv.lock ./
 
-# Install Poetry
-RUN pip install --upgrade pip && pip install --no-cache-dir poetry==$POETRY_VERSION
+# Install UV
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir uv==$UV_VERSION
 
 # Install dependencies
-RUN poetry config virtualenvs.create false \
-    && poetry install --no-cache --no-interaction --no-ansi --without dev
+RUN uv sync
 
 # Copy project files
 COPY src/ ./src/

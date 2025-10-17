@@ -2,30 +2,30 @@
 name = "fastapi-template"
 version = "1.0.0"
 description = "This project is a template for building FastAPI applications with best practices for development, testing, and deployment using Docker and Poetry."
-authors = [
-    {name = "Kevin Rodríguez",email = "kyrodriguez97@gmail.com"}
-]
-readme = "README.md"
+authors = [{ name = "Kevin Rodríguez", email = "kyrodriguez97@gmail.com" }]
 requires-python = ">=3.13"
+readme = "README.md"
 dependencies = [
     "fastapi[standard]==0.119.0"
 ]
 
-[tool.poetry]
-package-mode = false
+[tool.uv]
+package = false
 
 [dependency-groups]
 test = [
     "pytest==8.4.2",
     "pytest-cov (==7.0.0)"
+,
 ]
 dev = [
     "pre-commit (==4.3.0)",
     "isort (==7.0.0)",
     "black (==25.9.0)",
     "flake8 (==7.3.0)"
+,
 ]
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
