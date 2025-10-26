@@ -1,4 +1,4 @@
-FROM python:3.13.9-slim
+FROM python:3.14.0-slim
 
 ENV UV_VERSION=0.9.3
 ENV UV_PROJECT_ENVIRONMENT="/usr/local/"
