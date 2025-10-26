@@ -6,7 +6,7 @@ authors = [{ name = "Kevin Rodríguez", email = "kyrodriguez97@gmail.com" }]
 requires-python = ">=3.13"
 readme = "README.md"
 dependencies = [
-    "fastapi[standard]==0.119.0"
+    "fastapi[standard]==0.120.0"
 ]
 
 [tool.uv]
@@ -15,15 +15,13 @@ package = false
 [dependency-groups]
 test = [
     "pytest==8.4.2",
-    "pytest-cov (==7.0.0)"
-,
+    "pytest-cov (==7.0.0)",
 ]
 dev = [
     "pre-commit (==4.3.0)",
     "isort (==7.0.0)",
     "black (==25.9.0)",
-    "flake8 (==7.3.0)"
-,
+    "flake8 (==7.3.0)",
 ]
 
 [build-system]
