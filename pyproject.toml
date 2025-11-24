@@ -1,7 +1,7 @@
 [project]
 name = "fastapi-template"
 version = "1.0.0"
-description = "This project is a template for building FastAPI applications with best practices for development, testing, and deployment using Docker and Poetry."
+description = "This project is a template for building FastAPI applications with best practices for development, testing, and deployment using Docker and uv."
 authors = [{ name = "Kevin Rodríguez", email = "kyrodriguez97@gmail.com" }]
 requires-python = ">=3.13"
 readme = "README.md"
@@ -19,10 +19,31 @@ test = [
 ]
 dev = [
     "pre-commit (==4.4.0)",
-    "isort (==7.0.0)",
-    "black (==25.11.0)",
-    "flake8 (==7.3.0)",
+    "ruff (==0.14.6)",
 ]
+
+# Ruff configuration
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = [
+    "E", # pycodestyle
+    "F", # Pyflakes
+    "UP", # pyupgrade
+    "B", # flake8-bugbear
+    "SIM", # flake8-simplify
+    "I", # isort
+]
+ignore = ["E203", "E305"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
 
 [build-system]
 requires = ["hatchling"]

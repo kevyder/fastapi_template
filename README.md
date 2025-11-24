@@ -56,9 +56,8 @@ This project is a template for building FastAPI applications with best practices
 	pre-commit install
 	```
 	This will install git hooks to automatically run:
-	- black (code formatting)
-	- isort (import sorting)
-	- flake8 (code linting)
+	- ruff (code formatting and linting)
+	- conventional commit validation
 
 	Pre-commit will run these checks before each commit to ensure code quality.
 
