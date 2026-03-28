@@ -15,7 +15,7 @@ package = false
 [dependency-groups]
 test = [
     "pytest==9.0.2",
-    "pytest-cov (==7.0.0)",
+    "pytest-cov (==7.1.0)",
 ]
 dev = [
     "pre-commit (==4.5.1)",
