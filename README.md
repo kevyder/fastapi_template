@@ -25,15 +25,26 @@ This project is a template for building FastAPI applications with best practices
 ## Project Structure
 
 ```
+├── .github/
+│   ├── workflows/
+│   │   └── ci.yml               # CI workflow
+│   └── dependabot.yml           # Dependency update config
 ├── src/
-│   └── main.py           # FastAPI application
+│   ├── __init__.py
+│   └── main.py                  # FastAPI application entrypoint
 ├── tests/
-│   └── test_main.py      # Example pytest test
-├── Dockerfile            # Production Docker build
-├── docker-compose.yml    # Development container
-├── docker-compose.test.yml # Test container
-├── pyproject.toml        # Project configuration
-├── README.md             # Project documentation
+│   ├── __init__.py
+│   └── test_main.py             # Example pytest tests
+├── .gitignore                   # Git ignore rules
+├── .pre-commit-config.yaml      # Pre-commit hooks config
+├── .python-version              # Python version pin
+├── Dockerfile                   # Production Docker build
+├── docker-compose.yml           # Development container setup
+├── docker-compose.test.yml      # Test container setup
+├── pyproject.toml               # Project metadata and dependencies
+├── uv.lock                      # Locked dependency versions
+├── LICENSE
+└── README.md                    # Project documentation
 ```
 
 ## Setup
