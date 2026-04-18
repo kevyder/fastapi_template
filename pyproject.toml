@@ -6,7 +6,7 @@ authors = [{ name = "Kevin Rodríguez", email = "kyrodriguez97@gmail.com" }]
 requires-python = ">=3.13"
 readme = "README.md"
 dependencies = [
-    "fastapi[standard]==0.135.3"
+    "fastapi[standard]==0.136.0"
 ]
 
 [tool.uv]
