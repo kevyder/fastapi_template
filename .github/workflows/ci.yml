@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.13.9", "3.14.0"]
+        python-version: ["3.13.9", "3.14.3"]
 
     steps:
     - uses: actions/checkout@v4
@@ -57,7 +57,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: "3.13.9"
+        python-version: "3.14.3"
 
     - name: Install uv
       run: pip install uv
