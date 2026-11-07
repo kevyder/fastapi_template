@@ -49,7 +49,7 @@ jobs:
 
   lint:
     name: Code Quality
-    runs-on: ubuntu-latest
+    runs-on: linux
 
     steps:
     - uses: actions/checkout@v4
