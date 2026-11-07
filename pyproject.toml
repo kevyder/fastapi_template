@@ -6,7 +6,7 @@ authors = [{ name = "Kevin Rodríguez", email = "kyrodriguez97@gmail.com" }]
 requires-python = ">=3.13"
 readme = "README.md"
 dependencies = [
-    "fastapi[standard]==0.143.0"
+    "fastapi[standard]==0.162.0"
 ]
 
 [tool.uv]
@@ -14,12 +14,12 @@ package = false
 
 [dependency-groups]
 test = [
-    "pytest==9.1.1",
-    "pytest-cov (==7.1.0)",
+    "pytest==9.2.0",
+    "pytest-cov==7.1.0",
 ]
 dev = [
-    "pre-commit==4.6.1",
-    "ruff (==0.15.12)",
+    "pre-commit==4.7.0",
+    "ruff==0.17.4",
 ]
 
 # Ruff configuration
